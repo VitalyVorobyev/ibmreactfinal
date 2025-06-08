@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.landing {
+  min-height: 100vh;
+  background: url('/landingimage.png') center/cover no-repeat;
+  color: white;
+}
+
+.landing__content {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
   padding: 2rem;
+  background-color: rgba(51, 61, 80, 0.7);
+  backdrop-filter: blur(7px);
+}
+
+.landing__text {
+  max-width: 500px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.landing__text h1 {
+  font-size: 2.8rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.landing__text p {
+  font-size: 1.6rem;
+}
+
+.landing__text button {
+  background-color: #EFC16B;
+  color: black;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.landing__text button:hover {
+  background-color: #c1974a;
+}
+
+.landing__about {
+  max-width: 800px;
+}
+
+.landing__about p {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: justify;
+}
+
+@media (max-width: 1024px) {
+  .landing__content {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
