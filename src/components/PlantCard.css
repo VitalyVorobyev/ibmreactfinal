@@ -70,6 +70,10 @@
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
 }
 
 .plant_card_add_button:hover,
