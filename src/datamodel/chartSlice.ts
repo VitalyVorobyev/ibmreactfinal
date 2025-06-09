@@ -5,6 +5,8 @@ export interface ShoppingCartItem {
     name: string;
     price: number;
     quantity: number;
+    description: string;
+    imageUrl: string;
 };
 
 export interface ShoppingCartState {

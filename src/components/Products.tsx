@@ -1,5 +1,9 @@
 import Header from './Header';
 
+import { ShoppingCartItem } from '../datamodel/chartSlice';
+
+import { useSelector, useDispatch } from "react-redux";
+
 const Products = () => {
     return (
         <div className="products-page">

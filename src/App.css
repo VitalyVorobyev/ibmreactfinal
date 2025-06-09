@@ -63,6 +63,11 @@
   text-align: justify;
 }
 
+.cartIcon {
+  width: 24px;
+  height: 24px;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -110,6 +115,13 @@
 .navbar__link:hover {
   background-color: rgba(255, 255, 255, 0.15);
   color: white;
+}
+
+.navbar__link--disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .products-page {
