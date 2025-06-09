@@ -23,20 +23,20 @@ export default function PlantCard(props: PlantCardProps) {
                     <span className="plant_card_price">${props.plant.price.toFixed(2)}</span>
                     <div className="plant_card_quantity">
                         <button
-                            className="plant_card_add_button"
-                            onClick={() => props.onAdd()}
-                        >
-                            +
-                        </button>
-                        <span className="plant_card_quantity_value">
-                            {props.plant.quantity}
-                        </span>
-                        <button
                             className="plant_card_remove_button"
                             onClick={() => props.onRemove()}
                             disabled={props.plant.quantity === 0}
                         >
                             -
+                        </button>
+                        <span className="plant_card_quantity_value">
+                            {props.plant.quantity}
+                        </span>
+                        <button
+                            className="plant_card_add_button"
+                            onClick={() => props.onAdd()}
+                        >
+                            +
                         </button>
                     </div>
                 </div>

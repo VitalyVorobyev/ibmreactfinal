@@ -1,10 +1,21 @@
 import { Link, useLocation } from "react-router-dom";
 
+import { useSelector } from 'react-redux';
+import type { RootState } from '../datamodel/store';
+
 export default function Header() {
     const location = useLocation();
     const isHome = location.pathname === "/";
     const isProducts = location.pathname === "/products";
     const isCart = location.pathname === "/cart";
+
+    const items = useSelector((state: RootState) =>
+        state.shoppingCart.items.filter(item => item.quantity > 0)
+    );
+
+    const totalAmount = items.reduce((total, item) =>
+        total + item.quantity, 0
+    );
 
     return (
         <header className="navbar">
@@ -43,7 +54,7 @@ export default function Header() {
                         <circle cx="9" cy="20" r="2" />
                         <circle cx="17" cy="20" r="2" />
                     </svg>
-                    ({3})
+                    ({totalAmount})
                 </Link>
             </nav>
         </header>

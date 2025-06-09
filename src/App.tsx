@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 
 import LandingPage from './components/LandingPage';
 import Products from './components/Products';
+import CartPage from './components/CartPage';
 
 const App = () => {
     return (
@@ -11,7 +12,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/cart" element={<LandingPage />} />
+          <Route path="/cart" element={<CartPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>

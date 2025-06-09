@@ -1,10 +1,9 @@
-import { useEffect } from 'react';
 import Header from './Header';
 import { useSelector, useDispatch } from "react-redux";
 import PlantCard from './PlantCard';
+import { addItem, removeItem } from '../datamodel/chartSlice';
 import type { ShoppingCartItem } from '../datamodel/chartSlice';
 import type { RootState } from '../datamodel/store';
-import { addItem, removeItem } from '../datamodel/chartSlice';
 import './Products.css';
 
 interface PlantByCategoryProps {
@@ -44,10 +43,6 @@ const Products = () => {
     const getPlantsByIds = (ids: string[]) => {
         return cartItems.filter(plant => ids.includes(plant.id));
     };
-
-    // useEffect(() => {
-    //     // This effect could be used to fetch or update plant data if needed
-    // }, [cartItems]);
 
     const aromaticPlantsData = getPlantsByIds(aromaticPlants);
     const medicinalPlantsData = getPlantsByIds(medicinalPlants);
