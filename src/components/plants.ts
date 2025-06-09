@@ -7,7 +7,7 @@ const plants: ShoppingCartItem[] = [
         description: 'Aloe Vera is a succulent plant species of the genus Aloe. It is widely known for its medicinal and cosmetic uses.',
         price: 15.99,
         quantity: 1,
-        imageUrl: 'https://example.com/images/aloe-vera.jpg'
+        imageUrl: '/aloe_vera.png'
     },
     {
         id: '2',
@@ -15,7 +15,7 @@ const plants: ShoppingCartItem[] = [
         description: 'The Snake Plant, also known as Sansevieria, is a hardy houseplant that can survive in low light and requires minimal care.',
         price: 12.49,
         quantity: 1,
-        imageUrl: 'https://example.com/images/snake-plant.jpg'
+        imageUrl: '/snake_plant.png'
     },
     {
         id: '3',
@@ -23,7 +23,7 @@ const plants: ShoppingCartItem[] = [
         description: 'Lavender is a fragrant herb known for its calming properties and beautiful purple flowers.',
         price: 9.99,
         quantity: 1,
-        imageUrl: 'https://example.com/images/lavender.jpg'
+        imageUrl: '/lavender.png'
     },
     {
         id: '4',
@@ -31,7 +31,7 @@ const plants: ShoppingCartItem[] = [
         description: 'Eucalyptus is an aromatic plant with a distinct fresh scent and medicinal properties.',
         price: 18.99,
         quantity: 1,
-        imageUrl: 'https://example.com/images/eucalyptus.jpg'
+        imageUrl: '/eucalyptus.png'
     },
     {
         id: '5',
@@ -39,7 +39,7 @@ const plants: ShoppingCartItem[] = [
         description: 'Mint is a refreshing herb perfect for culinary uses and aromatherapy.',
         price: 7.99,
         quantity: 1,
-        imageUrl: 'https://example.com/images/mint.jpg'
+        imageUrl: '/mint.png'
     },
     {
         id: '6',
@@ -47,7 +47,7 @@ const plants: ShoppingCartItem[] = [
         description: 'Chamomile is a daisy-like plant known for its calming tea and medicinal benefits.',
         price: 8.99,
         quantity: 1,
-        imageUrl: 'https://example.com/images/chamomile.jpg'
+        imageUrl: '/chamomile.png'
     }
 ];
 
