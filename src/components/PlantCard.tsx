@@ -4,7 +4,6 @@ import type { ShoppingCartItem } from '../datamodel/chartSlice';
 
 interface PlantCardProps {
     plant: ShoppingCartItem;
-    quantity: number;
     onAdd: () => void;
     onRemove: () => void;
 }
@@ -29,10 +28,13 @@ export default function PlantCard(props: PlantCardProps) {
                         >
                             +
                         </button>
-                        <span className="plant_card_quantity_value">1</span>
+                        <span className="plant_card_quantity_value">
+                            {props.plant.quantity}
+                        </span>
                         <button
                             className="plant_card_remove_button"
                             onClick={() => props.onRemove()}
+                            disabled={props.plant.quantity === 0}
                         >
                             -
                         </button>

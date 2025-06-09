@@ -87,3 +87,8 @@
     min-width: 20px;
     text-align: center;
 }
+
+.plant_card_remove_button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

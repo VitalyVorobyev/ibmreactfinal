@@ -1,26 +1,30 @@
+import { useEffect } from 'react';
 import Header from './Header';
 import { useSelector, useDispatch } from "react-redux";
 import PlantCard from './PlantCard';
-import plants, { aromaticPlants, medicinalPlants, lowMaintenancePlants } from './plants';
+import type { ShoppingCartItem } from '../datamodel/chartSlice';
+import type { RootState } from '../datamodel/store';
 import { addItem, removeItem } from '../datamodel/chartSlice';
 import './Products.css';
 
-const PlantByCategory = ({ category, plantsData }) => {
-    const cartItems = useSelector((state) => state.shoppingCart.items);
+interface PlantByCategoryProps {
+    title: string;
+    plantsData: ShoppingCartItem[];
+}
+
+const PlantByCategory = (props:PlantByCategoryProps) => {
     const dispatch = useDispatch();
 
     return (
         <div className="category-section">
-            <h2 className="category-title">{category}</h2>
+            <h2 className="category-title">{props.title}</h2>
             <div className="products-grid">
-                {plantsData.map((plant) => {
-                    const quantity = cartItems.find(item => item.id === plant.id)?.quantity || 0;
+                {props.plantsData.map((plant) => {
                     return (
                         <PlantCard
                             key={plant.id}
                             plant={plant}
-                            quantity={quantity}
-                            onAdd={() => dispatch(addItem(plant))}
+                            onAdd={() => dispatch(addItem(plant.id))}
                             onRemove={() => dispatch(removeItem(plant.id))}
                         />
                     );
@@ -32,12 +36,18 @@ const PlantByCategory = ({ category, plantsData }) => {
 
 const Products = () => {
     // Filter plants by category
+    const cartItems = useSelector((state: RootState) => state.shoppingCart.items);
+    const aromaticPlants = useSelector((state: RootState) => state.shoppingCart.aromaticPlants);
+    const medicinalPlants = useSelector((state: RootState) => state.shoppingCart.medicinalPlants);
+    const lowMaintenancePlants = useSelector((state: RootState) => state.shoppingCart.lowMaintenancePlants);
+
     const getPlantsByIds = (ids: string[]) => {
-        return plants.filter(plant => ids.includes(plant.id));
+        return cartItems.filter(plant => ids.includes(plant.id));
     };
 
-    const cartItems = useSelector((state) => state.shoppingCart.items);
-    const dispatch = useDispatch();
+    // useEffect(() => {
+    //     // This effect could be used to fetch or update plant data if needed
+    // }, [cartItems]);
 
     const aromaticPlantsData = getPlantsByIds(aromaticPlants);
     const medicinalPlantsData = getPlantsByIds(medicinalPlants);
@@ -47,35 +57,18 @@ const Products = () => {
         <div className="products-page">
             <Header />
             <div className="products-content">
-                <div className="category-section">
-                    <h2 className="category-title">Aromatic Plants</h2>
-                    <div className="products-grid">
-                        {aromaticPlantsData.map((plant) => (
-                            const quantity = cartItems.find(item => item.id === plant.id)?.quantity || 0;
-                            <PlantCard
-                                key={plant.id}
-                                plant={plant} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="category-section">
-                    <h2 className="category-title">Medicinal Plants</h2>
-                    <div className="products-grid">
-                        {medicinalPlantsData.map((plant) => (
-                            <PlantCard key={plant.id} plant={plant} />
-                        ))}
-                    </div>
-                </div>
-
-                <div className="category-section">
-                    <h2 className="category-title">Low Maintenance Plants</h2>
-                    <div className="products-grid">
-                        {lowMaintenancePlantsData.map((plant) => (
-                            <PlantCard key={plant.id} plant={plant} />
-                        ))}
-                    </div>
-                </div>
+                <PlantByCategory
+                    title="Aromatic Plants"
+                    plantsData={aromaticPlantsData}
+                />
+                <PlantByCategory
+                    title="Medicinal Plants"
+                    plantsData={medicinalPlantsData}
+                />
+                <PlantByCategory
+                    title="Low Maintenance Plants"
+                    plantsData={lowMaintenancePlantsData}
+                />
             </div>
         </div>
     );

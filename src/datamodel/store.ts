@@ -1,7 +1,13 @@
-// store.js
 import { configureStore } from '@reduxjs/toolkit';
-import shopingChart from './chartSlice';
+import shoppingCart from './chartSlice';
 
-export default configureStore({
-    reducer: { chart: shopingChart }
+const store = configureStore({
+    reducer: {
+        shoppingCart: shoppingCart
+    }
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export default store;
