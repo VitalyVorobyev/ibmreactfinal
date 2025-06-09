@@ -12,7 +12,7 @@ export default function PlantCard(props: PlantCardProps) {
     return (
         <div className="plant_card">
             <img
-                src={props.plant.imageUrl}
+                src={import.meta.env.BASE_URL + `images/${props.plant.imageUrl}`}
                 alt={props.plant.name}
                 className="plant_card_image"
             />

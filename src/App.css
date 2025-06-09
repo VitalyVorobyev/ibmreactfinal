@@ -6,7 +6,7 @@
 
 .landing {
   min-height: 100vh;
-  background: url('/landingimage.png') center/cover no-repeat;
+  background: url('/ibmreactfinal/images/landingimage.png') center/cover no-repeat;
   color: white;
 }
 

@@ -14,7 +14,7 @@ export default function CartItem({ item, onIncrease, onDecrease, onDelete }: Car
     return (
         <div className="cart_item">
             <img
-                src={item.imageUrl}
+                src={import.meta.env.BASE_URL + `images/${item.imageUrl}`}
                 alt={item.name}
                 className="cart_item_image"
             />
@@ -25,7 +25,7 @@ export default function CartItem({ item, onIncrease, onDecrease, onDelete }: Car
                 </div>
                 <div className="cart_item_controls">
                     <div className="cart_item_quantity">
-                        <button 
+                        <button
                             className="cart_button"
                             onClick={onDecrease}
                             disabled={item.quantity === 0}
@@ -33,7 +33,7 @@ export default function CartItem({ item, onIncrease, onDecrease, onDelete }: Car
                             -
                         </button>
                         <span className="cart_item_quantity_value">{item.quantity}</span>
-                        <button 
+                        <button
                             className="cart_button"
                             onClick={onIncrease}
                         >
@@ -41,7 +41,7 @@ export default function CartItem({ item, onIncrease, onDecrease, onDelete }: Car
                         </button>
                     </div>
                     <span className="cart_item_total">${totalPrice.toFixed(2)}</span>
-                    <button 
+                    <button
                         className="cart_button delete"
                         onClick={onDelete}
                     >

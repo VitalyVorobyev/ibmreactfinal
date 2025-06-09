@@ -14,7 +14,7 @@ export interface ShoppingCartState {
     aromaticPlants: string[];
     medicinalPlants: string[];
     lowMaintenancePlants: string[];
-}
+};
 
 const initialState: ShoppingCartState = {
     items: [
@@ -24,7 +24,7 @@ const initialState: ShoppingCartState = {
             description: 'Aloe Vera is a succulent plant species of the genus Aloe. It is widely known for its medicinal and cosmetic uses.',
             price: 15.99,
             quantity: 0,
-            imageUrl: '/aloe_vera.png'
+            imageUrl: 'aloe_vera.png'
         },
         {
             id: '2',
@@ -32,7 +32,7 @@ const initialState: ShoppingCartState = {
             description: 'The Snake Plant, also known as Sansevieria, is a hardy houseplant that can survive in low light and requires minimal care.',
             price: 12.49,
             quantity: 0,
-            imageUrl: '/snake_plant.png'
+            imageUrl: 'snake_plant.png'
         },
         {
             id: '3',
@@ -40,7 +40,7 @@ const initialState: ShoppingCartState = {
             description: 'Lavender is a fragrant herb known for its calming properties and beautiful purple flowers.',
             price: 9.99,
             quantity: 0,
-            imageUrl: '/lavender.png'
+            imageUrl: 'lavender.png'
         },
         {
             id: '4',
@@ -48,7 +48,7 @@ const initialState: ShoppingCartState = {
             description: 'Eucalyptus is an aromatic plant with a distinct fresh scent and medicinal properties.',
             price: 18.99,
             quantity: 0,
-            imageUrl: '/eucalyptus.png'
+            imageUrl: 'eucalyptus.png'
         },
         {
             id: '5',
@@ -56,7 +56,7 @@ const initialState: ShoppingCartState = {
             description: 'Mint is a refreshing herb perfect for culinary uses and aromatherapy.',
             price: 7.99,
             quantity: 0,
-            imageUrl: '/mint.png'
+            imageUrl: 'mint.png'
         },
         {
             id: '6',
@@ -64,7 +64,7 @@ const initialState: ShoppingCartState = {
             description: 'Chamomile is a daisy-like plant known for its calming tea and medicinal benefits.',
             price: 8.99,
             quantity: 0,
-            imageUrl: '/chamomile.png'
+            imageUrl: 'chamomile.png'
         }
     ],
     aromaticPlants: ['3', '4', '5'],  // Lavender, Eucalyptus, Mint
